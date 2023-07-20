@@ -1,0 +1,9 @@
+services:
+  fansly-watch:
+    build: .
+    volumes:
+      - media:/app/media
+    env_file: .env
+    restart: always
+volumes:
+  media:
