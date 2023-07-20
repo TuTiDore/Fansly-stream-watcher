@@ -4,12 +4,11 @@ WORKDIR /app
 
 RUN apt-get update && apt-get install -y \
     git \
-    python3 \
-    python3-pip
+    python3 python3-pip \
+    libxml2-dev libxslt-dev
 
 RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir streamlink && \
-    pip install --no-cache-dir cloudscraper
+    pip install --no-cache-dir streamlink cloudscraper
 
 RUN mkdir media
 
