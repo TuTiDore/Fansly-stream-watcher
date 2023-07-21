@@ -3,7 +3,7 @@ services:
     build: .
     volumes:
       - media:/app/media
-    env_file: .env
+      - ./config:/app/config
     restart: always
 volumes:
   media:

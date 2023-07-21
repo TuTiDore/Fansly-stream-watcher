@@ -4,7 +4,9 @@ Automatically check when streamers you follow go live and download the stream di
 
 ## Setup
 
-Inside [environment file](.env), set environment variables
+Inside `config/.env`, set environment variables listed in `config/.env.example`
+
+Add usernames separated by newlines in `config/blacklist.config`, case insensitive
 
 ## Run
 
