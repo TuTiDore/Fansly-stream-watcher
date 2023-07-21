@@ -2,7 +2,5 @@
   "name": "Fansly live download",
   "build": {
     "dockerfile": "Dockerfile.dev"
-  },
-  "mounts": ["source=/app/media,target=/host,type=bind,consistency=cached"],
-  "runArgs": ["--env-file", ".env"]
+  }
 }
