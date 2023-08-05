@@ -72,7 +72,7 @@ def add_stream(stream_id: str):
 
     print(f"Opening streamlink subprocess [stream_id={stream_id}]")
     url = f"{BASE_URL}/live/{stream_id}"
-    output_filepath = "/app/media/{plugin}/{author}/{time}-{author}.ts"
+    output_filepath = "/app/media/{plugin}/{author}/{time:%Y%m%d-%H%M%S}-{author}.ts"
     command = f"streamlink -o \"{output_filepath}\" --fansly-header-auth \"{auth}\" --fansly-header-user-agent \"{user_agent}\" \"{url}\" best"
     subprocess.Popen(command, shell=True)
 
