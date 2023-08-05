@@ -53,8 +53,16 @@ def get_current_stream_list() -> List[str]:
     if not res.ok:
         return []
     data = json.loads(res.text)
-    return [(s["id"], s["username"])
-            for s in data["response"]["aggregationData"]["accounts"]]
+    response = data.get("response")
+    if response is None:
+        return []
+    aggData = response.get("aggregationData")
+    if aggData is None:
+        return []
+    accounts = aggData.get("accounts")
+    if accounts is None:
+        return []
+    return [(s["id"], s["username"]) for s in accounts]
 
 
 def add_stream(stream_id: str):
