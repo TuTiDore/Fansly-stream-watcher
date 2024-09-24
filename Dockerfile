@@ -7,8 +7,7 @@ RUN apt-get update && apt-get install -y \
     python3 python3-pip \
     libxml2-dev libxslt-dev
 
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir streamlink cloudscraper python-dotenv
+RUN pip install --no-cache-dir --break-system-packages streamlink cloudscraper python-dotenv
 
 RUN mkdir media
 
